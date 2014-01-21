@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-
+//alex test
 public class start{
 
 	public static String s="";
@@ -11,16 +11,16 @@ public class start{
 	
 	public static void afficherMenu(){
 		System.out.println("Application de gestion de cartes de baseball");
-		System.out.println("Voici la liste d'opérations valides : ");
+		System.out.println("Voici la liste d'operations valides : ");
 		System.out.println("1. Ajouter un joueur ");
 		System.out.println("2. Afficher l'information d'un joueur"); 
-		System.out.println("3. Mise à jour de l'information d'un joueur"); 
+		System.out.println("3. Mise a jour de l'information d'un joueur"); 
 		System.out.println("4. Effacer l'information d'un joueur ");
 		System.out.println("5. Liste des joueurs ");
 		System.out.println("6. Sauvegarde ");
 		System.out.println("0. Sortir ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Votre sélection : ");
+		System.out.print("Votre selection : ");
 		
 		try {
 			s = br.readLine();
