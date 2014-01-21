@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 
 public class start{
@@ -16,13 +19,16 @@ public class start{
 		System.out.println("5. Liste des joueurs ");
 		System.out.println("6. Sauvegarde ");
 		System.out.println("0. Sortir ");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Votre sélection : ");
+		
 		try {
-			s= System.in.read() + "";
+			s = br.readLine();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		
 		System.out.println(s);
 		
