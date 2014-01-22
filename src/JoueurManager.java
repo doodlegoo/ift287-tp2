@@ -43,11 +43,16 @@ public class JoueurManager {
 		return false;
 	}
 	
-	public void afficher()
+	public void afficherTout()
 	{
 		for(Joueur j : ListJoueur)
 		{
 			j.afficherJoueur();
 		}
+	}
+	
+	public void afficherJoueur(Joueur j)
+	{
+		j.afficherJoueur();
 	}
 }
