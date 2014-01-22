@@ -50,7 +50,10 @@ public class start{
 			writer = new BufferedWriter(new OutputStreamWriter(
 			        new FileOutputStream(System.getProperty("user.dir") + path), "utf-8"));
 			Joueur joueur = new Joueur();
-			String resultat = joueur.afficherJoueur();
+			String resultat = "";
+			if(path.length() == 0){
+				resultat = joueur.afficherJoueur();
+			}
 			writer.write(resultat);
 		} catch (UnsupportedEncodingException | FileNotFoundException e) {
 			e.printStackTrace();
