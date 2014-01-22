@@ -1,8 +1,6 @@
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import com.sun.source.tree.CaseTree;
-
 public class JoueurManager {
 	private SortedSet<Joueur> ListJoueur;
 	
