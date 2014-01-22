@@ -45,10 +45,12 @@ public class JoueurManager {
 	
 	public String afficherTout()
 	{
+		String total = "";
 		for(Joueur j : ListJoueur)
 		{
-			return j.afficherJoueur();
+			total += "\n" + j.afficherJoueur();
 		}
+		return total;
 	}
 	
 	public String afficherJoueur(Joueur j)
