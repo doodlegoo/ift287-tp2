@@ -1,9 +1,3 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-
-
 public class Joueur implements Comparable<Joueur>{
 	
 	private String clefId;
@@ -50,23 +44,11 @@ public class Joueur implements Comparable<Joueur>{
 		return n.clefId.compareTo(this.clefId) ;
 	}
 	
-	public void afficherJoueur() {
-		System.out.println("Option selectionne: 2. Afficher l'information d'un joueur");
-		System.out.println();
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Entrez la clé d'identification du joueur: ");
-		String s="";
-		try {
-			s = br.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("Voici l'information sauvegarde de: "+ getPrenom()+" " +getNom() );
-		System.out.println("Le joueur a "+ getNbCarte() +" cartes enregistre");
-		
-		System.out.println(jeuDeCarte/*.afficher()*/);
-		
+	public String afficherJoueur() {
+		String s = "Voici l'information sauvegarde de: "+ getPrenom()+" " +getNom() ;
+		//System.out.println("Le joueur a "+ getNbCarte() +" cartes enregistre");
+		s +=  jeuDeCarte/*.afficher()*/;
+		return s;
 	}
 	
 }
