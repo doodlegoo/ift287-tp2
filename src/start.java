@@ -5,9 +5,6 @@ import java.io.InputStreamReader;
 
 //alex test
 public class start{
-
-	public static String s="";
-	
 	
 	public static void afficherMenu(){
 		System.out.println("Application de gestion de cartes de baseball");
@@ -21,7 +18,7 @@ public class start{
 		System.out.println("0. Sortir ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Votre selection : ");
-		
+		String s="";
 		try {
 			s = br.readLine();
 		} catch (IOException e) {
@@ -29,13 +26,17 @@ public class start{
 			e.printStackTrace();
 		}
 		
-		
-		System.out.println(s);
-		
+		switch(s){ 
+			case "1" : System.out.println("Ajouter joueur"); break;
+			case "2" : System.out.println("Afficher info joueur"); break;
+			case "3" : System.out.println("Mise a jour"); break;
+			case "4" : System.out.println("Effacer joueur"); break;
+			case "5" : System.out.println("Liste joueurs"); break;
+			case "6" : System.out.println("Save"); break;
+			case "0":System.exit(0); break;
+			default: System.out.println("Rentrer un chiffre entre 0 et 6 svp") ; break;
+		}		
 	}
-	
-	
-	
 	
 	
 	/**
