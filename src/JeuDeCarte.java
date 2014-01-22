@@ -12,8 +12,10 @@ public class JeuDeCarte {
 		listCartes = new TreeSet<Carte>();
 	}
 	
-	public void Ajouter(Carte c)
+	public void ajouter()
 	{
+		// Demande les infos de la carte
+		Carte c = new Carte();
 		listCartes.add(c);
 		++nbCartes;
 	}

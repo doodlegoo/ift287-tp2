@@ -6,6 +6,12 @@ public class Joueur implements Comparable<Joueur>{
 	private int nbCarte;
 	private JeuDeCarte jeuDeCarte;
 	
+	public JeuDeCarte getJeuDeCarte() {
+		return jeuDeCarte;
+	}
+	public void setJeuDeCarte(JeuDeCarte jeuDeCarte) {
+		this.jeuDeCarte = jeuDeCarte;
+	}
 	public int getNbCarte() {
 		return nbCarte;
 	}
@@ -34,9 +40,9 @@ public class Joueur implements Comparable<Joueur>{
 	}
 
 	
-	public Joueur()
+	public Joueur(String s)
 	{
-		
+		clefId = s;
 	}
 	
 	@Override

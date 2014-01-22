@@ -35,7 +35,7 @@ public class Inventaire{
 		}
 		
 		switch(s){ 
-			case "1" : System.out.println("Ajouter joueur"); break;
+			case "1" : ajouterJoueur(); break;
 			case "2" : afficherJoueur(); break;
 			case "3" : System.out.println("Mise a jour"); break;
 			case "4" : System.out.println("Effacer joueur"); break;
@@ -43,10 +43,25 @@ public class Inventaire{
 			case "6" : sauvegarderFichier(""); break;
 			case "0" : System.exit(0); break;
 			default: System.out.println("Rentrer un chiffre entre 0 et 6 svp") ; break;
-		}		
+		}
+		afficherMenu();
 	}
 	
 	
+	private static void ajouterJoueur(){
+		System.out.println("Option selectionne: 1. Ajouter un joueur");
+		System.out.println();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Entrez la clé d'identification du joueur: ");
+		String s="";
+		try {
+			s = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		jm.ajouterJoueur(s);
+	}
 	
 	private static void afficherJoueur() {
 		 System.out.println("Option selectionne: 2. Afficher l'information d'un joueur");
@@ -68,7 +83,7 @@ public class Inventaire{
 	    try {
 			writer = new BufferedWriter(new OutputStreamWriter(
 			        new FileOutputStream(System.getProperty("user.dir") + path), "utf-8"));
-			Joueur joueur = new Joueur();
+			Joueur joueur = new Joueur("");
 			String resultat = "";
 			if(path.length() == 0){
 				resultat = joueur.afficherJoueur();

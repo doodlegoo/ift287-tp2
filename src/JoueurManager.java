@@ -9,8 +9,12 @@ public class JoueurManager {
 		ListJoueur = new TreeSet<Joueur>();
 	}
 	
-	public void ajouterJoueur(Joueur j)
+	public void ajouterJoueur(String s)
 	{
+		Joueur j = new Joueur(s);
+		//j.setPrenom() + j.setNom();
+		//j.setNbCarte();
+		//j.getJeuDeCarte().ajouter();
 		ListJoueur.add(j);
 	}
 	
