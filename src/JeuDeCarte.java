@@ -4,25 +4,31 @@ import java.util.TreeSet;
 
 public class JeuDeCarte {
 
-	private SortedSet<Carte> ListCartes;
-	
+	private SortedSet<Carte> listCartes;
+	private int nbCartes;
 	public JeuDeCarte()
 	{
-		ListCartes = new TreeSet<Carte>();
+		nbCartes=0;
+		listCartes = new TreeSet<Carte>();
 	}
 	
 	public void Ajouter(Carte c)
 	{
-		ListCartes.add(c);
+		listCartes.add(c);
+		++nbCartes;
 	}
 	
-	public void Retirer(Carte c)
-	{
-	
-	}
-	
-	public void Modifier(Carte c, Carte r)
+	public void Modifier(int nb)
 	{
 		
 	}
+	public String afficherTout() {
+		String s = "Le joueur a "+ nbCartes +" cartes enregistre";
+		for(Carte c : listCartes)
+		{
+			s += c.afficher();
+		}
+		return s;
+	}
+	
 }
