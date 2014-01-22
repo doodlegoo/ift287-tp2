@@ -10,7 +10,9 @@ import java.io.Writer;
 
 
 //alex test
-public class start{
+public class Inventaire{
+	
+	private static JoueurManager jm = new JoueurManager();
 	
 	public static void afficherMenu() throws IOException{
 		System.out.println("Application de gestion de cartes de baseball");
@@ -34,7 +36,7 @@ public class start{
 		
 		switch(s){ 
 			case "1" : System.out.println("Ajouter joueur"); break;
-			case "2" : System.out.println("Afficher info joueur"); break;
+			case "2" : afficherJoueur(); break;
 			case "3" : System.out.println("Mise a jour"); break;
 			case "4" : System.out.println("Effacer joueur"); break;
 			case "5" : System.out.println("Liste joueurs"); break;
@@ -44,7 +46,24 @@ public class start{
 		}		
 	}
 	
-	public static void sauvegarderFichier(String path) throws IOException{
+	
+	
+	private static void afficherJoueur() {
+		 System.out.println("Option selectionne: 2. Afficher l'information d'un joueur");
+			System.out.println();
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			System.out.print("Entrez la clé d'identification du joueur: ");
+			String s="";
+			try {
+				s = br.readLine();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			jm.afficherJoueur(s);
+	}
+
+	private static void sauvegarderFichier(String path) throws IOException{
 		Writer writer = null;
 	    try {
 			writer = new BufferedWriter(new OutputStreamWriter(
@@ -61,6 +80,8 @@ public class start{
 	}
 	
 	
+	
+	
 	/**
 	 * @param args
 	 * @throws IOException 
@@ -68,7 +89,6 @@ public class start{
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		afficherMenu();
-		
 		
 	}
 

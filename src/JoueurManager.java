@@ -20,11 +20,11 @@ public class JoueurManager {
 	}
 	
 	//retorune la premiere occurance du Joueur dans la liste
-	public Joueur Find(String nom)
+	public Joueur find(String id)
 	{
 		for(Joueur j : ListJoueur)
 		{
-			if(nom.equals(j.getPrenom() + " " + j.getNom()))
+			if(id.equals(j.getClefId()))
 				return j;
 		}
 		return null;
@@ -53,8 +53,8 @@ public class JoueurManager {
 		return total;
 	}
 	
-	public String afficherJoueur(Joueur j)
+	public String afficherJoueur(String id)
 	{
-		return j.afficherJoueur();
+		return find(id).afficherJoueur();
 	}
 }
