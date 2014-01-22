@@ -1,12 +1,18 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 
 
 //alex test
 public class start{
 	
-	public static void afficherMenu(){
+	public static void afficherMenu() throws IOException{
 		System.out.println("Application de gestion de cartes de baseball");
 		System.out.println("Voici la liste d'operations valides : ");
 		System.out.println("1. Ajouter un joueur ");
@@ -32,17 +38,31 @@ public class start{
 			case "3" : System.out.println("Mise a jour"); break;
 			case "4" : System.out.println("Effacer joueur"); break;
 			case "5" : System.out.println("Liste joueurs"); break;
-			case "6" : System.out.println("Save"); break;
-			case "0":System.exit(0); break;
+			case "6" : sauvegarderFichier(""); break;
+			case "0" : System.exit(0); break;
 			default: System.out.println("Rentrer un chiffre entre 0 et 6 svp") ; break;
 		}		
+	}
+	
+	public static void sauvegarderFichier(String path) throws IOException{
+		Writer writer = null;
+	    try {
+			writer = new BufferedWriter(new OutputStreamWriter(
+			        new FileOutputStream(System.getProperty("user.dir") + path), "utf-8"));
+			Joueur joueur = new Joueur();
+			String resultat = joueur.afficherJoueur();
+			writer.write(resultat);
+		} catch (UnsupportedEncodingException | FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
 	/**
 	 * @param args
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		afficherMenu();
 		
