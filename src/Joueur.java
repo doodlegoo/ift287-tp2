@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Joueur implements Comparable<Joueur>{
 	
 	private String clefId;
@@ -40,9 +44,35 @@ public class Joueur implements Comparable<Joueur>{
 	}
 
 	
-	public Joueur(String s)
+	public Joueur(String id)
 	{
-		clefId = s;
+		jeuDeCarte = new JeuDeCarte();
+		clefId = id;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Entrez le prenom du joueur: ");
+		String s="";
+		try {
+			s = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		setPrenom(s);
+		setNom("rodrigue");
+		
+		System.out.println("Combien de cartes?");
+		int i=0;
+		try {
+			s = br.readLine();
+			i = Integer.parseInt(s);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		setNbCarte(i);
+		for(int k = 1; k<=i;k++){
+			jeuDeCarte.ajouter(k);
+		}
 	}
 	
 	@Override

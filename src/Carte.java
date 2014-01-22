@@ -1,17 +1,49 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class Carte implements Comparable<Carte>{
 
-	private String clefId;
+	private int clefId;
 	private String titre, equipe, annee;
 	
-	public Carte(){
+	public Carte(int id){
+		clefId = id;
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Entrez le titre de la carte "+clefId +" : ");
+		String s="";
+		try {
+			s = br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		setTitre(s);
+		System.out.print("Entrez l'equipe de la carte  "+clefId +" : ");
+		s="";
+		try {
+			s = br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		setEquipe(s);
+		System.out.print("Entrez l'annee de parution de la carte "+clefId +" : ");
+		s="";
+		try {
+			s = br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		setEquipe(s);
+		
 		
 	}
 	
-	public String getClefId() {
+	public int getClefId() {
 		return clefId;
 	}
-	public void setClefId(String clef) {
+	public void setClefId(int clef) {
 		clefId = clef;
 	}
 	
@@ -41,7 +73,7 @@ public class Carte implements Comparable<Carte>{
 
 	@Override
 	public int compareTo(Carte n) {
-		return n.clefId.compareTo(this.clefId) ;
+		return n.clefId = this.clefId ;
 	}
 	public String afficher() {
 		String s = "Carte " + clefId + "\n";
