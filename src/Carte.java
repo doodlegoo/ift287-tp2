@@ -76,7 +76,11 @@ public class Carte implements Comparable<Carte>{
 	//doit retourner un int negatif ou positif selon si this est plus grand
 	@Override
 	public int compareTo(Carte n) {
-		return n.clefId = this.clefId ;
+		if( n.clefId == this.clefId)
+			return 0;
+		if( n.clefId < this.clefId)
+			return -1;
+		return 1;
 	}
 	public String afficher() {
 		String s = "Carte " + clefId + "\n";
