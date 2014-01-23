@@ -25,7 +25,7 @@ public class Inventaire{
 		System.out.println("0. Sortir ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Votre selection : ");
-		
+	
 		String s="";
 		try {
 			s = br.readLine();

@@ -15,7 +15,7 @@ public class JeuDeCarte {
 	public void ajouter(int i)
 	{
 		// Demande les infos de la carte
-		Carte c = new Carte(i);
+		Carte c = Interaction.IOcarte();
 		listCartes.add(c);
 		
 		nbCartes++;

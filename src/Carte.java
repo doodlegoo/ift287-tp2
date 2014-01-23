@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 public class Carte implements Comparable<Carte>{
 
 	private int clefId;
-	private String titre, equipe, annee;
+	private String titre, equipe;
+	private int annee;
 	
 	
 	//une solution mais je preferais avoir tout se qui est IO dans une methode autre que le constructeur 
@@ -39,7 +40,13 @@ public class Carte implements Comparable<Carte>{
 			e.printStackTrace();
 		}
 		setEquipe(s);
-		
+	}
+	
+	public Carte(String titre, String equipe, int annee)
+	{
+		setEquipe(equipe);
+		setTitre(titre);
+		setAnnee(annee);
 	}
 	
 	public int getClefId() {
@@ -65,11 +72,11 @@ public class Carte implements Comparable<Carte>{
 		this.equipe = equipe;
 	}
 
-	public String getAnnee() {
+	public int getAnnee() {
 		return annee;
 	}
 
-	public void setAnnee(String annee) {
+	public void setAnnee(int annee) {
 		this.annee = annee;
 	}
 
