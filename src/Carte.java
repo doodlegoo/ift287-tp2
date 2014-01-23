@@ -8,6 +8,9 @@ public class Carte implements Comparable<Carte>{
 	private int clefId;
 	private String titre, equipe, annee;
 	
+	
+	//une solution mais je preferais avoir tout se qui est IO dans une methode autre que le constructeur 
+	//surtout quand va venir le temps d'interagir ac une BD
 	public Carte(int id){
 		clefId = id;
 		
@@ -36,7 +39,6 @@ public class Carte implements Comparable<Carte>{
 			e.printStackTrace();
 		}
 		setEquipe(s);
-		
 		
 	}
 	
@@ -71,6 +73,7 @@ public class Carte implements Comparable<Carte>{
 		this.annee = annee;
 	}
 
+	//doit retourner un int negatif ou positif selon si this est plus grand
 	@Override
 	public int compareTo(Carte n) {
 		return n.clefId = this.clefId ;

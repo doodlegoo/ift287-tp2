@@ -9,7 +9,6 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
 
-//alex test
 public class Inventaire{
 	
 	private static JoueurManager jm = new JoueurManager();
@@ -26,22 +25,23 @@ public class Inventaire{
 		System.out.println("0. Sortir ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Votre selection : ");
+		
 		String s="";
 		try {
 			s = br.readLine();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		switch(s){ 
-			case "1" : ajouterJoueur(); break;
-			case "2" : afficherJoueur(); break;
-			case "3" : System.out.println("Mise a jour"); break;
-			case "4" : System.out.println("Effacer joueur"); break;
-			case "5" : System.out.println("Liste joueurs"); break;
-			case "6" : sauvegarderFichier(""); break;
-			case "0" : System.exit(0); break;
+		int i = Integer.parseInt(s);
+		switch(i){ 
+			case 1 : ajouterJoueur(); break;
+			case 2 : afficherJoueur(); break;
+			case 3 : System.out.println("Mise a jour"); break;
+			case 4 : System.out.println("Effacer joueur"); break;
+			case 5 : System.out.println("Liste joueurs"); break;
+			case 6 : sauvegarderFichier(""); break;
+			case 0 : System.exit(0); break;
 			default: System.out.println("Rentrer un chiffre entre 0 et 6 svp") ; break;
 		}
 		afficherMenu();
@@ -52,7 +52,7 @@ public class Inventaire{
 		System.out.println("Option selectionne: 1. Ajouter un joueur");
 		System.out.println();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Entrez la clé d'identification du joueur: ");
+		System.out.print("Entrez la clï¿½ d'identification du joueur: ");
 		String s="";
 		try {
 			s = br.readLine();
@@ -67,7 +67,7 @@ public class Inventaire{
 		 System.out.println("Option selectionne: 2. Afficher l'information d'un joueur");
 			System.out.println();
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.print("Entrez la clé d'identification du joueur: ");
+			System.out.print("Entrez la clï¿½ d'identification du joueur: ");
 			String s="";
 			try {
 				s = br.readLine();

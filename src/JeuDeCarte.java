@@ -17,6 +17,8 @@ public class JeuDeCarte {
 		// Demande les infos de la carte
 		Carte c = new Carte(i);
 		listCartes.add(c);
+		
+		nbCartes++;
 	}
 	
 	public void Modifier(int nb)
