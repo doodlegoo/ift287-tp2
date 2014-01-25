@@ -20,6 +20,12 @@ public class JeuDeCarte {
 		
 		nbCartes++;
 	}
+	public void ajouter(String titre, String equipe, int annee){
+		Carte c = new Carte(titre, equipe, annee);
+		listCartes.add(c);
+		
+		nbCartes++;
+	}
 	
 	public void Modifier(int nb)
 	{

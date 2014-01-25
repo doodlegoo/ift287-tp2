@@ -15,6 +15,11 @@ public class JoueurManager {
 		ListJoueur.add(j);
 	}
 	
+	public void ajouterJoueur(String[] data){
+		Joueur j = new Joueur(data);
+		ListJoueur.add(j);
+	}
+	
 	public void retirerJoueur(Joueur j)
 	{
 		ListJoueur.remove(j);

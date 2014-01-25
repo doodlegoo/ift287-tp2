@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class Joueur implements Comparable<Joueur>{
 	
@@ -8,7 +9,7 @@ public class Joueur implements Comparable<Joueur>{
 	private String nom;
 	private String prenom;
 	private int nbCarte;
-	private JeuDeCarte jeuDeCarte;
+	private JeuDeCarte jeuDeCarte = new JeuDeCarte();
 	
 	public JeuDeCarte getJeuDeCarte() {
 		return jeuDeCarte;
@@ -46,7 +47,6 @@ public class Joueur implements Comparable<Joueur>{
 	
 	public Joueur(String id)
 	{
-		jeuDeCarte = new JeuDeCarte();
 		clefId = id;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Entrez le prenom du joueur: ");
@@ -72,6 +72,18 @@ public class Joueur implements Comparable<Joueur>{
 		setNbCarte(i);
 		for(int k = 1; k<=i;k++){
 			jeuDeCarte.ajouter(k);
+		}
+	}
+	public Joueur(String[] data){
+		setClefId(data[0]);
+		String[] nom = data[1].split(" ");
+		setPrenom(nom[0]); 
+		setNom(nom[1]);
+		setNbCarte(Integer.parseInt(data[2]));
+		String[] infoCarte = Arrays.copyOfRange(data, 3, data.length);
+		for(int i = 0; i < infoCarte.length - 1; ++i){
+			jeuDeCarte.ajouter(infoCarte[i], infoCarte[i+1], Integer.parseInt(infoCarte[i+2]));
+			i += 2;
 		}
 	}
 	
