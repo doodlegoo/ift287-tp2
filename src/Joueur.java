@@ -9,7 +9,7 @@ public class Joueur implements Comparable<Joueur>{
 	private String nom;
 	private String prenom;
 	private int nbCarte;
-	private JeuDeCarte jeuDeCarte = new JeuDeCarte();
+	private JeuDeCarte jeuDeCarte;
 	
 	public JeuDeCarte getJeuDeCarte() {
 		return jeuDeCarte;
@@ -47,6 +47,7 @@ public class Joueur implements Comparable<Joueur>{
 	
 	public Joueur(String id)
 	{
+		jeuDeCarte = new JeuDeCarte();
 		clefId = id;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Entrez le prenom du joueur: ");
@@ -75,6 +76,7 @@ public class Joueur implements Comparable<Joueur>{
 		}
 	}
 	public Joueur(String[] data){
+		jeuDeCarte = new JeuDeCarte();
 		setClefId(data[0]);
 		String[] nom = data[1].split(" ");
 		setPrenom(nom[0]); 
@@ -95,6 +97,12 @@ public class Joueur implements Comparable<Joueur>{
 	public String afficherJoueur() {
 		String s = "Voici l'information sauvegarde de: "+ getPrenom()+" " +getNom() ;
 		s +=  jeuDeCarte.afficherTout();
+		return s;
+	}
+	public String afficherFichierTexte(){
+		String s = "";
+		s += "\"" + getClefId() + "\";\"" + getPrenom() + " " + getNom() + "\";\"" + getNbCarte() + "\"";
+		s += jeuDeCarte.afficherFichierTexte() + "\n";
 		return s;
 	}
 	

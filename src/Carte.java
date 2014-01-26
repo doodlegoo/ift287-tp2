@@ -96,5 +96,10 @@ public class Carte implements Comparable<Carte>{
 		s += "Annee de parution : " + annee + "\n";
 		return s;
 	}
+	
+	public String afficherFichierTexte(){
+		String s = ";\"" + titre + "\";\"" + equipe + "\";\"" + annee + "\"";
+		return s;
+	}
 
 }

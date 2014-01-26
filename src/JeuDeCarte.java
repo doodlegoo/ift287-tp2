@@ -40,4 +40,12 @@ public class JeuDeCarte {
 		return s;
 	}
 	
+	public String afficherFichierTexte(){
+		String s = "";
+		for(Carte c : listCartes){
+			s += c.afficherFichierTexte();
+		}
+		return s;
+	}
+	
 }

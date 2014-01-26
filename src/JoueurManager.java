@@ -63,4 +63,12 @@ public class JoueurManager {
 	{
 		return find(id).afficherJoueur();
 	}
+	
+	public String afficherInfoFichierTexte(){
+		String fichierComplet = "";
+		for (Joueur j: ListJoueur) {
+			fichierComplet += j.afficherFichierTexte();
+		}
+		return fichierComplet;
+	}
 }

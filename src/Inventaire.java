@@ -42,7 +42,7 @@ public class Inventaire{
 			case 3 : System.out.println("Mise a jour"); break;
 			case 4 : System.out.println("Effacer joueur"); break;
 			case 5 : System.out.println("Liste joueurs"); break;
-			case 6 : sauvegarderFichier(""); break;
+			case 6 : sauvegarderFichier(); break;
 			case 0 : System.exit(0); break;
 			default: System.out.println("Rentrer un chiffre entre 0 et 6 svp") ; break;
 		}
@@ -77,7 +77,7 @@ public class Inventaire{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			jm.afficherJoueur(s);
+			System.out.println(jm.afficherJoueur(s));
 	}
 	private static void lireFichier(){
 		try {
@@ -103,20 +103,21 @@ public class Inventaire{
 		}
 	}
 
-	private static void sauvegarderFichier(String path) throws IOException{
+	private static void sauvegarderFichier() throws IOException{
+		int nb = 1;
 		Writer writer = null;
 	    try {
+	    	while(new File(System.getProperty("user.dir") + "\\src\\test" + nb + ".txt").exists())
+	    		nb++;
 			writer = new BufferedWriter(new OutputStreamWriter(
-			        new FileOutputStream(System.getProperty("user.dir") + path), "utf-8"));
-			Joueur joueur = new Joueur("");
-			String resultat = "";
-			if(path.length() == 0){
-				resultat = joueur.afficherJoueur();
-			}
-			writer.write(resultat);
+			        new FileOutputStream(System.getProperty("user.dir") + "\\src\\test" + nb + ".txt"), "utf-8"));
+			String fileContent = jm.afficherInfoFichierTexte();
+			writer.write(fileContent);
+			System.out.println("Option sélectionné: 6. Sauvegarder\nLe fichier" + System.getProperty("user.dir") + "\\src\\test" + nb + ".txt a ete cree avec succes.");
 		} catch (UnsupportedEncodingException | FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	    writer.close();
 	}
 	
 	
