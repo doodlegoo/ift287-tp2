@@ -1,15 +1,15 @@
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class JeuDeCarte {
 
-	private SortedSet<Carte> listCartes;
+	private List<Carte> listCartes;
 	private int nbCartes;
 	public JeuDeCarte()
 	{
 		nbCartes=0;
-		listCartes = new TreeSet<Carte>();
+		listCartes = new ArrayList<Carte>();
 	}
 	
 	public void ajouter(int i)

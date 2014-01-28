@@ -1,12 +1,12 @@
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JoueurManager {
-	private SortedSet<Joueur> ListJoueur;
-	
+	//private SortedSet<Joueur> ListJoueur;
+	private List<Joueur> ListJoueur;
 	JoueurManager()
 	{
-		ListJoueur = new TreeSet<Joueur>();
+		ListJoueur = new ArrayList<Joueur>();
 	}
 	
 	public void ajouterJoueur(String s)
