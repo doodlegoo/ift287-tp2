@@ -79,6 +79,7 @@ public class Inventaire{
 			}
 			System.out.println(jm.afficherJoueur(s));
 	}
+	
 	private static void lireFichier(){
 		try {
 			File file = new File(System.getProperty("user.dir") + "\\src\\test1.txt");

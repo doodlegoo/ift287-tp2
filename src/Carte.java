@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 
 public class Carte implements Comparable<Carte>{
 
-	private int clefId;
 	private String titre, equipe;
 	private int annee;
 	
@@ -13,10 +12,9 @@ public class Carte implements Comparable<Carte>{
 	//une solution mais je preferais avoir tout se qui est IO dans une methode autre que le constructeur 
 	//surtout quand va venir le temps d'interagir ac une BD
 	public Carte(int id){
-		clefId = id;
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Entrez le titre de la carte "+clefId +" : ");
+		System.out.print("Entrez le titre de la carte: ");
 		String s="";
 		try {
 			s = br.readLine();
@@ -24,7 +22,7 @@ public class Carte implements Comparable<Carte>{
 			e.printStackTrace();
 		}
 		setTitre(s);
-		System.out.print("Entrez l'equipe de la carte  "+clefId +" : ");
+		System.out.print("Entrez l'equipe de la carte: ");
 		s="";
 		try {
 			s = br.readLine();
@@ -32,7 +30,7 @@ public class Carte implements Comparable<Carte>{
 			e.printStackTrace();
 		}
 		setEquipe(s);
-		System.out.print("Entrez l'annee de parution de la carte "+clefId +" : ");
+		System.out.print("Entrez l'annee de parution de la carte: ");
 		s="";
 		try {
 			s = br.readLine();
@@ -47,13 +45,6 @@ public class Carte implements Comparable<Carte>{
 		setEquipe(equipe);
 		setTitre(titre);
 		setAnnee(annee);
-	}
-	
-	public int getClefId() {
-		return clefId;
-	}
-	public void setClefId(int clef) {
-		clefId = clef;
 	}
 	
 	public String getTitre() {
@@ -83,15 +74,10 @@ public class Carte implements Comparable<Carte>{
 	//doit retourner un int negatif ou positif selon si this est plus grand
 	@Override
 	public int compareTo(Carte n) {
-		if( n.clefId == this.clefId)
-			return 0;
-		if( n.clefId < this.clefId)
-			return -1;
 		return 1;
 	}
 	public String afficher() {
-		String s = "Carte " + clefId + "\n";
-		s += "Titre : " + titre + "\n";
+		String s = "Titre : " + titre + "\n";
 		s += "Equipe : " + equipe + "\n";
 		s += "Annee de parution : " + annee + "\n";
 		return s;
