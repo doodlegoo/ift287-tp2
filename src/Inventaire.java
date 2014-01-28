@@ -33,7 +33,7 @@ public class Inventaire{
 			case 1 : Interaction.IOmenu(i); ajouterJoueur(); break;
 			case 2 : Interaction.IOmenu(i); afficherJoueur(); break;
 			case 3 : Interaction.IOmenu(i); break;
-			case 4 : Interaction.IOmenu(i); break;
+			case 4 : Interaction.IOmenu(i); effaceJoueur(); break;
 			case 5 : Interaction.IOmenu(i); break;
 			case 6 : Interaction.IOmenu(i); sauvegarderFichier(); break;
 			case 0 : Interaction.IOmenu(i); sauvegarderFichier(); System.exit(0); break;
@@ -49,6 +49,15 @@ public class Inventaire{
 	
 	private static void afficherJoueur() {
 		System.out.println(jm.afficherJoueur(Interaction.IOAfficherJoueur()));
+	}
+	
+	private static void effaceJoueur(){
+		String id = Interaction.IOAfficherJoueur();
+		System.out.println(jm.afficherJoueur(id));
+		String resultat = Interaction.IOEffacerJoueur();
+		if(resultat.toUpperCase() == "O")
+			jm.retirerJoueur(jm.find(id));
+		
 	}
 	
 	private static void lireFichier(){

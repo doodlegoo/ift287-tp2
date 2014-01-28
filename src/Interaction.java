@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Interaction {
 	
+	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	public static void IOmenu(int option)
 	{
 		System.out.print("Option selectionne: " + option + ". ");
@@ -44,9 +45,6 @@ public class Interaction {
 		String titre = "";
 		int annee = 0;
 		String equipe = "";
-		
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.print("Entrez le titre de la carte : ");
 		try {
@@ -91,7 +89,6 @@ public class Interaction {
 	    writer.close();
 	}
 	public static String IOAjoutJoueur(){
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Entrez la cle d'identification du joueur: ");
 		String s="";
 		try {
@@ -104,7 +101,6 @@ public class Interaction {
 	
 	public static String IOAfficherJoueur(){
 		System.out.println();
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Entrez la cle d'identification du joueur: ");
 		String s="";
 		try {
@@ -115,14 +111,27 @@ public class Interaction {
 		return s;
 	}
 	
+	public static String IOEffacerJoueur(){
+		String s = "";
+		while(s.toUpperCase() != "O" && s.toUpperCase() != "N"){
+			System.out.print("Voulez vous effacer l'information de ce joueur ? (O/N)");
+			try {
+				s = br.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return s;
+	}
+	
 	public static List<String[]> IOInitialisation(){
 		List<String[]> listeJoueurs = new ArrayList<String[]>();
 		try {
 			File file = new File(System.getProperty("user.dir") + "\\src\\test1.txt");
 			if(file.exists()){
-				BufferedReader br = new BufferedReader(new FileReader(file));
+				BufferedReader brFile = new BufferedReader(new FileReader(file));
 				String line;
-				while ((line = br.readLine()) != null) {
+				while ((line = brFile.readLine()) != null) {
 					String[] contenus = line.split(";");
 					for (int i = 0; i < contenus.length; i++) {
 						if (contenus[i].contains("\"")) {
@@ -131,7 +140,7 @@ public class Interaction {
 					}
 					listeJoueurs.add(contenus);
 				}
-				br.close();
+				brFile.close();
 			}
 				
 		} catch (IOException e){

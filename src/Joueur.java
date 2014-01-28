@@ -95,7 +95,7 @@ public class Joueur implements Comparable<Joueur>{
 	}
 	
 	public String afficherJoueur() {
-		String s = "Voici l'information sauvegarde de: "+ getPrenom()+" " +getNom() ;
+		String s = "Voici l'information sauvegarde de: "+ getPrenom()+" " +getNom() + "\n" ;
 		s +=  jeuDeCarte.afficherTout();
 		return s;
 	}

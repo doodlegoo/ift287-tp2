@@ -45,7 +45,7 @@ public class JeuDeCarte {
 	}
 	
 	public String afficherTout() {
-		String s = "Le joueur a "+ nbCartes +" cartes enregistre";
+		String s = "Le joueur a "+ nbCartes +" cartes enregistre\n";
 		for(Carte c : listCartes)
 		{
 			s += c.afficher();

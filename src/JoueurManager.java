@@ -20,9 +20,9 @@ public class JoueurManager {
 		ListJoueur.add(j);
 	}
 	
-	public void retirerJoueur(Joueur j)
+	public boolean retirerJoueur(Joueur j)
 	{
-		ListJoueur.remove(j);
+		return ListJoueur.remove(j);
 	}
 	
 	//retorune la premiere occurance du Joueur dans la liste
