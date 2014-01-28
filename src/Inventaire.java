@@ -43,7 +43,7 @@ public class Inventaire{
 			case 4 : System.out.println("Effacer joueur"); break;
 			case 5 : System.out.println("Liste joueurs"); break;
 			case 6 : sauvegarderFichier(); break;
-			case 0 : System.exit(0); break;
+			case 0 : sauvegarderFichier(); System.exit(0); break;
 			default: System.out.println("Rentrer un chiffre entre 0 et 6 svp") ; break;
 		}
 		afficherMenu();

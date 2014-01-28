@@ -27,10 +27,23 @@ public class JeuDeCarte {
 		nbCartes++;
 	}
 	
-	public void Modifier(int nb)
+	public void modifier(int nb)
 	{
 		
 	}
+	
+	public void deleteCarte(int nb)
+	{
+		afficherTout();
+		System.out.println("Voulez vous effacer l'information de ce joueur ? (O/N)");
+		
+		if("blabla"=="blabla"){
+			listCartes.clear();
+			System.out.println("L'information du joueur Alex Rodriguez a ete efface du systeme.");
+		}
+		
+	}
+	
 	public String afficherTout() {
 		String s = "Le joueur a "+ nbCartes +" cartes enregistre";
 		for(Carte c : listCartes)
