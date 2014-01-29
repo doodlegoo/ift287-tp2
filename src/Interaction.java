@@ -15,6 +15,7 @@ import java.util.List;
 public class Interaction {
 	
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	private static Writer writer;
 	public static void IOmenu(int option)
 	{
 		System.out.print("Option selectionne: " + option + ". ");
@@ -115,7 +116,6 @@ public class Interaction {
 	
 	public static void IOSauvegarder(String fileContent) throws IOException{
 		int nb = 1;
-		Writer writer = null;
 	    try {
 	    	while(new File(System.getProperty("user.dir") + "\\src\\test" + nb + ".txt").exists())
 	    		nb++;
@@ -127,6 +127,35 @@ public class Interaction {
 			e.printStackTrace();
 		}
 	    writer.close();
+	}
+	public static void IOSauvegarderRapport(String fileContent){
+		System.out.println("Entrez le nom du fichier : ");
+		String path = "";
+		try {
+			path = br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		File file = new File(path);
+		if(file.exists()){
+			file.delete();
+		}
+		else{
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		try {
+			writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path)));
+			writer.write(fileContent);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	public static String IOAjoutJoueur(){
 		System.out.print("Entrez la cle d'identification du joueur: ");
