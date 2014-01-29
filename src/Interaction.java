@@ -73,6 +73,37 @@ public class Interaction {
 		
 	}
 	
+	public static String IOJoueurNom()
+	{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Entrez le nom et prenom du joueur ex: joe toto: ");
+		String s="";
+		try {
+			s = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return s;
+	}
+	public static int IOnbCartes()
+	{
+		System.out.println("Combien de cartes?");
+		String s;
+		int i=0;
+		try {
+			s = br.readLine();
+			i = Integer.parseInt(s);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return i;
+	}
+	
+	
 	public static void IOSauvegarder(String fileContent) throws IOException{
 		int nb = 1;
 		Writer writer = null;
@@ -82,7 +113,7 @@ public class Interaction {
 			writer = new BufferedWriter(new OutputStreamWriter(
 			        new FileOutputStream(System.getProperty("user.dir") + "\\src\\test" + nb + ".txt"), "utf-8"));
 			writer.write(fileContent);
-			System.out.println("Option sélectionné: 6. Sauvegarder\nLe fichier" + System.getProperty("user.dir") + "\\src\\test" + nb + ".txt a ete cree avec succes.");
+			System.out.println("Option sï¿½lectionnï¿½: 6. Sauvegarder\nLe fichier" + System.getProperty("user.dir") + "\\src\\test" + nb + ".txt a ete cree avec succes.");
 		} catch (UnsupportedEncodingException | FileNotFoundException e) {
 			e.printStackTrace();
 		}

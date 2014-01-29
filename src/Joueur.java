@@ -49,32 +49,19 @@ public class Joueur implements Comparable<Joueur>{
 	{
 		jeuDeCarte = new JeuDeCarte();
 		clefId = id;
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Entrez le prenom du joueur: ");
-		String s="";
-		try {
-			s = br.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		setPrenom(s);
-		setNom("rodrigue");
 		
-		System.out.println("Combien de cartes?");
-		int i=0;
-		try {
-			s = br.readLine();
-			i = Integer.parseInt(s);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String nomComplet = Interaction.IOJoueurNom();
+		String[] nomArray = nomComplet.split(" ");
+		setPrenom(nomArray[0]);
+		setNom(nomArray[1]);
+		
+		int i = Interaction.IOnbCartes();
 		setNbCarte(i);
 		for(int k = 1; k<=i;k++){
 			jeuDeCarte.ajouter(k);
 		}
 	}
+	
 	public Joueur(String[] data){
 		jeuDeCarte = new JeuDeCarte();
 		setClefId(data[0]);
