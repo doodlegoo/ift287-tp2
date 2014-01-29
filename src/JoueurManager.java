@@ -22,6 +22,7 @@ public class JoueurManager {
 	
 	public boolean retirerJoueur(Joueur j)
 	{
+		j.getJeuDeCarte().deleteCarte();
 		return ListJoueur.remove(j);
 	}
 	

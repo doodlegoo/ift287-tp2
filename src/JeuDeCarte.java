@@ -32,7 +32,7 @@ public class JeuDeCarte {
 		
 	}
 	
-	public void deleteCarte(int nb)
+	public void deleteCarte()
 	{
 		afficherTout();
 		if(Interaction.confirmationDelete()){
