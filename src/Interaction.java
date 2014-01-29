@@ -220,4 +220,9 @@ public class Interaction {
 	public static void deleteConfirme(){
 		System.out.println("L'information du joueur Alex Rodriguez a ete efface du systeme.");
 	}
+	public static void merci(){
+		System.out.println("Merci d'avoir utilise le systeme de gestion d'inventaire de cartes."); 
+	}
+	
+	
 }
