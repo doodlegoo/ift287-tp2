@@ -75,14 +75,11 @@ public class Interaction {
 	
 	public static String IOJoueurNom()
 	{
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Entrez le nom et prenom du joueur ex: joe toto: ");
 		String s="";
 		try {
 			s = br.readLine();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -97,7 +94,6 @@ public class Interaction {
 			s = br.readLine();
 			i = Integer.parseInt(s);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return i;
