@@ -77,9 +77,9 @@ public class Carte implements Comparable<Carte>{
 		return 1;
 	}
 	public String afficher() {
-		String s = "Titre : " + titre + "\n";
-		s += "Equipe : " + equipe + "\n";
-		s += "Annee de parution : " + annee + "\n";
+		String s = "\t Titre : " + titre + "\n";
+		s += "\t Equipe : " + equipe + "\n";
+		s += "\t Annee de parution : " + annee + "\n";
 		return s;
 	}
 	
