@@ -45,6 +45,7 @@ public class JeuDeCarte {
 		String s = "Le joueur a "+ nbCartes +" cartes enregistre\n";
 		for(Carte c : listCartes)
 		{
+			s += "Carte " + (listCartes.indexOf(c)+1)   + " : \n";
 			s += c.afficher();
 		}
 		return s;
