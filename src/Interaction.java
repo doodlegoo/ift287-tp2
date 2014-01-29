@@ -184,6 +184,7 @@ public class Interaction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		typeRapport	= typeRapport.toUpperCase();
 		return typeRapport;
 	}
 	
