@@ -191,4 +191,19 @@ public class Interaction {
 	{
 		
 	}
+	public static boolean confirmationDelete(){
+		System.out.println("Voulez vous effacer l'information de ce joueur ? (O/N)");
+		try {
+			if( br.readLine().equals("O")){
+				return true;
+			}		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public static void deleteConfirme(){
+		System.out.println("L'information du joueur Alex Rodriguez a ete efface du systeme.");
+	}
 }

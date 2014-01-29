@@ -35,13 +35,10 @@ public class JeuDeCarte {
 	public void deleteCarte(int nb)
 	{
 		afficherTout();
-		System.out.println("Voulez vous effacer l'information de ce joueur ? (O/N)");
-		
-		if("blabla"=="blabla"){
+		if(Interaction.confirmationDelete()){
 			listCartes.clear();
-			System.out.println("L'information du joueur Alex Rodriguez a ete efface du systeme.");
+			Interaction.deleteConfirme();
 		}
-		
 	}
 	
 	public String afficherTout() {
