@@ -149,6 +149,17 @@ public class Interaction {
 		return listeJoueurs;
 	}
 	
+	public static String IOtypeRapport(){
+		String typeRapport = "";
+		System.out.print("\nVoulez-vous creer la liste des joueurs dans un fichier ou l'afficher sur l'ecran ? (F/E):");
+		try {
+			typeRapport = br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return typeRapport;
+	}
+	
 	public static void IOjoueur()
 	{
 		

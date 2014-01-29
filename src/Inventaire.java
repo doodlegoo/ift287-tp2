@@ -34,7 +34,7 @@ public class Inventaire{
 			case 2 : Interaction.IOmenu(i); afficherJoueur(); break;
 			case 3 : Interaction.IOmenu(i); break;
 			case 4 : Interaction.IOmenu(i); effaceJoueur(); break;
-			case 5 : Interaction.IOmenu(i); break;
+			case 5 : Interaction.IOmenu(i); rapport(); break;
 			case 6 : Interaction.IOmenu(i); sauvegarderFichier(); break;
 			case 0 : Interaction.IOmenu(i); sauvegarderFichier(); System.exit(0); break;
 			default: System.out.println("Rentrer un chiffre entre 0 et 6 svp") ; break;
@@ -69,6 +69,19 @@ public class Inventaire{
 
 	private static void sauvegarderFichier() throws IOException{
 		Interaction.IOSauvegarder(jm.afficherInfoFichierTexte());
+	}
+	
+	private static void rapport(){
+		String reponse = Interaction.IOtypeRapport();
+		String contenuRapport = jm.afficherTout();
+		switch (reponse) {
+		case "E":
+			System.out.print(contenuRapport);
+			break;
+		case "F":
+			
+			break;
+		}
 	}
 	
 	/**
