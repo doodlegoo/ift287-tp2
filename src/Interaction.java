@@ -89,7 +89,7 @@ public class Interaction {
 	}
 	public static String IOJoueurNom()
 	{
-		System.out.print("Entrez le nom et prenom du joueur ex: joe toto: ");
+		System.out.print("Entrez le nom et prenom du joueur : ");
 		String s="";
 		try {
 			s = br.readLine();
@@ -150,6 +150,7 @@ public class Interaction {
 		try {
 			writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path)));
 			writer.write(fileContent);
+			writer.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -252,6 +253,9 @@ public class Interaction {
 	public static void merci(){
 		System.out.println("Merci d'avoir utilise le systeme de gestion d'inventaire de cartes."); 
 	}
-	
-	
+
+	public static void modifierJoueur() {
+		System.out.println("Maintenant entrez les donnees a modifier : ");
+		
+	}
 }

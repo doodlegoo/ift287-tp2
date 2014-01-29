@@ -9,9 +9,9 @@ public class JoueurManager {
 		ListJoueur = new ArrayList<Joueur>();
 	}
 	
-	public void ajouterJoueur(String s)
+	public void ajouterJoueur(String id)
 	{
-		Joueur j = new Joueur(s);
+		Joueur j = new Joueur(id);
 		ListJoueur.add(j);
 	}
 	
@@ -26,6 +26,15 @@ public class JoueurManager {
 		return ListJoueur.remove(j);
 	}
 	
+	public void modifierJoueur(String id){
+		
+		ListJoueur.remove(find(id));
+		Joueur j = new Joueur(id);
+		ListJoueur.add(j);
+		
+	}
+	
+	
 	//retorune la premiere occurance du Joueur dans la liste
 	public Joueur find(String id)
 	{
@@ -35,19 +44,6 @@ public class JoueurManager {
 				return j;
 		}
 		return null;
-	}
-	
-	//trouver le joueur a modifier
-	public boolean modifier(String NomJoueur)
-	{
-		for(Joueur j : ListJoueur)
-		{
-			if((j.getPrenom() + " " + j.getNom() == NomJoueur))
-			{
-				//do some magic! 
-			}
-		}
-		return false;
 	}
 	
 	public String afficherTout()
@@ -72,4 +68,7 @@ public class JoueurManager {
 		}
 		return fichierComplet;
 	}
+	
+	
+	
 }
