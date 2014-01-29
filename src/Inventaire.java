@@ -37,8 +37,8 @@ public class Inventaire{
 	private static void miseAJour(){
 		String s = Interaction.IOAfficherJoueur();
 		System.out.println(jm.afficherJoueur(s));
-		Interaction.modifierJoueur(s);
-		
+		Interaction.modifierJoueur();
+		jm.modifierJoueur(s);
 	}
 	
 	private static void ajouterJoueur(){
