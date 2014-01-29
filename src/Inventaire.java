@@ -9,18 +9,9 @@ public class Inventaire{
 	private static JoueurManager jm = new JoueurManager();
 	
 	public static void afficherMenu() throws IOException{
-		System.out.println("Application de gestion de cartes de baseball");
-		System.out.println("Voici la liste d'operations valides : ");
-		System.out.println("1. Ajouter un joueur ");
-		System.out.println("2. Afficher l'information d'un joueur"); 
-		System.out.println("3. Mise a jour de l'information d'un joueur"); 
-		System.out.println("4. Effacer l'information d'un joueur ");
-		System.out.println("5. Liste des joueurs ");
-		System.out.println("6. Sauvegarde ");
-		System.out.println("0. Sortir ");
+		Interaction.IOmenu();
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Votre selection : ");
-	
 		String s="";
 		try {
 			s = br.readLine();
