@@ -181,19 +181,6 @@ public class Interaction {
 		return s;
 	}
 	
-	public static String IOEffacerJoueur(){
-		String s = "";
-		while(s.toUpperCase() != "O" && s.toUpperCase() != "N"){
-			System.out.print("Voulez vous effacer l'information de ce joueur ? (O/N)");
-			try {
-				s = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		return s;
-	}
-	
 	public static List<String[]> IOInitialisation(){
 		List<String[]> listeJoueurs = new ArrayList<String[]>();
 		try {
@@ -231,10 +218,6 @@ public class Interaction {
 		return typeRapport;
 	}
 	
-	public static void IOjoueur()
-	{
-		
-	}
 	public static boolean confirmationDelete(){
 		System.out.println("Voulez vous effacer l'information de ce joueur ? (O/N)");
 		try {
@@ -247,8 +230,8 @@ public class Interaction {
 		return false;
 	}
 	
-	public static void deleteConfirme(){
-		System.out.println("L'information du joueur Alex Rodriguez a ete efface du systeme.");
+	public static void deleteConfirme(String nom){
+		System.out.println("L'information du joueur "+ nom +" a ete efface du systeme.");
 	}
 	public static void merci(){
 		System.out.println("Merci d'avoir utilise le systeme de gestion d'inventaire de cartes."); 

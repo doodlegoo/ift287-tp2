@@ -52,8 +52,7 @@ public class Inventaire{
 	private static void effaceJoueur(){
 		String id = Interaction.IOAfficherJoueur();
 		System.out.println(jm.afficherJoueur(id));
-		String resultat = Interaction.IOEffacerJoueur();
-		if(resultat.toUpperCase() == "O")
+		if(Interaction.confirmationDelete())
 			jm.retirerJoueur(jm.find(id));
 		
 	}

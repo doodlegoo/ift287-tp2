@@ -32,12 +32,12 @@ public class JeuDeCarte {
 		
 	}
 	
-	public void deleteCarte()
+	public void deleteCarte(String nom)
 	{
 		afficherTout();
 		if(Interaction.confirmationDelete()){
 			listCartes.clear();
-			Interaction.deleteConfirme();
+			Interaction.deleteConfirme(nom);
 		}
 	}
 	
