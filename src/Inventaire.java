@@ -77,7 +77,7 @@ public class Inventaire{
 			System.out.print(contenuRapport);
 			break;
 		case "F":
-			
+			Interaction.IOSauvegarderRapport(contenuRapport);
 			break;
 		}
 	}
