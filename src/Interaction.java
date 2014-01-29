@@ -109,7 +109,7 @@ public class Interaction {
 			writer = new BufferedWriter(new OutputStreamWriter(
 			        new FileOutputStream(System.getProperty("user.dir") + "\\src\\test" + nb + ".txt"), "utf-8"));
 			writer.write(fileContent);
-			System.out.println("Option s�lectionn�: 6. Sauvegarder\nLe fichier" + System.getProperty("user.dir") + "\\src\\test" + nb + ".txt a ete cree avec succes.");
+			System.out.println("Le fichier " + System.getProperty("user.dir") + "\\src\\test" + nb + ".txt a ete cree avec succes.");
 		} catch (UnsupportedEncodingException | FileNotFoundException e) {
 			e.printStackTrace();
 		}
