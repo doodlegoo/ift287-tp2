@@ -110,8 +110,8 @@ public class Interaction {
 	}
 	
 	/**
-	 * La methode IOJoueurNom 
-	 * @return
+	 * La methode IOJoueurNom pose la question sur le nom et prenom du joueur
+	 * @return Le nom du joueur
 	 */
 	public static String IOJoueurNom()
 	{
@@ -127,6 +127,11 @@ public class Interaction {
 		
 		return s;
 	}
+	
+	/**
+	 * La methode IOnbCartes pose la question sur le nombre de cartes
+	 * @return Le nombre de cartes
+	 */
 	public static int IOnbCartes()
 	{
 		System.out.println("Combien de cartes?");
@@ -143,7 +148,11 @@ public class Interaction {
 		return i;
 	}
 	
-	
+	/**
+	 * La methode IOSauvegarder permet de sauvegarder un CSV
+	 * @param fileContent le contenu du fichier
+	 * @throws IOException
+	 */
 	public static void IOSauvegarder(String fileContent) throws IOException{
 		int nb = 1;
 	    try {
@@ -159,8 +168,8 @@ public class Interaction {
 	    writer.close();
 	}
 	/**
-	 * 
-	 * @param fileContent
+	 * La methode IOSauvegarderRapport permet de sauvegarder un rapport (option 5).
+	 * @param fileContent Le contenu du fichier.
 	 */
 	public static void IOSauvegarderRapport(String fileContent){
 		System.out.println("Entrez le nom du fichier : ");
@@ -181,6 +190,10 @@ public class Interaction {
 		}
 		
 	}
+	/**
+	 * La methode IOCleIdentification permet d'aller chercher la cle d'identification
+	 * @return La cle
+	 */
 	public static String IOCleIdentification(){
 		String s=null;
 		try {
@@ -194,6 +207,10 @@ public class Interaction {
 		return s;
 	}
 	
+	/**
+	 * La methode IOInitialisation permet d'aller chercher le fichier test1 dans le dossier src
+	 * @return Une liste de tableau String de tous les joueurs
+	 */
 	public static List<String[]> IOInitialisation(){
 		List<String[]> listeJoueurs = new ArrayList<String[]>();
 		try {
@@ -218,7 +235,10 @@ public class Interaction {
 		}
 		return listeJoueurs;
 	}
-	
+	/**
+	 * La methode IOtyperapport permet de savoir si c'est affiche sur un ecran ou un fichier.
+	 * @return E ou F
+	 */
 	public static String IOtypeRapport(){
 		String typeRapport = "";
 		System.out.print("\nVoulez-vous creer la liste des joueurs dans un fichier ou l'afficher sur l'ecran ? (F/E):");
@@ -231,6 +251,10 @@ public class Interaction {
 		return typeRapport;
 	}
 	
+	/**
+	 * La methode confirmationDelete demande si la personne veut vraiment effacer le joueur.
+	 * @return Si c'est accepte
+	 */
 	public static boolean confirmationDelete(){
 		System.out.println("Voulez vous effacer l'information de ce joueur ? (O/N)");
 		try {
@@ -256,6 +280,5 @@ public class Interaction {
 
 	public static void modifierJoueur() {
 		System.out.println("Maintenant entrez les donnees a modifier : ");
-		
 	}
 }
