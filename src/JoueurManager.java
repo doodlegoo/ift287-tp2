@@ -4,28 +4,48 @@ import java.util.List;
 public class JoueurManager {
 	//private SortedSet<Joueur> ListJoueur;
 	private List<Joueur> ListJoueur;
+	/**
+	 * Initialize le joueur manager
+	 */
 	JoueurManager()
 	{
 		ListJoueur = new ArrayList<Joueur>();
 	}
 	
+	/**
+	 * ajoute un joueur (appelle manuel)
+	 * @param id du joueur ajouter
+	 */
 	public void ajouterJoueur(String id)
 	{
 		Joueur j = new Joueur(id);
 		ListJoueur.add(j);
 	}
 	
+	/**
+	 * ajoute un joueur (construction suite a lecutre de fichier)
+	 * @param data information sur le joueur 
+	 */
 	public void ajouterJoueur(String[] data){
 		Joueur j = new Joueur(data);
 		ListJoueur.add(j);
 	}
 	
+	/**
+	 * Retire un joueur de JoueurManager
+	 * @param j Objet Joueur a retirer
+	 * @return un boolean si l'operation a reusit
+	 */
 	public boolean retirerJoueur(Joueur j)
 	{
 		j.getJeuDeCarte().deleteCarte(j.getPrenom() + " " + j.getNom());
 		return ListJoueur.remove(j);
 	}
 	
+	/**
+	 * modifie un joueur particulier  
+	 * @param id du joueur a modifier
+	 */
 	public void modifierJoueur(String id){
 		
 		ListJoueur.remove(find(id));
@@ -35,7 +55,11 @@ public class JoueurManager {
 	}
 	
 	
-	//retorune la premiere occurance du Joueur dans la liste
+	/**
+	 * trouve la premiere occurance du joueur dans la structure de donnee de JoueurManager.
+	 * @param id du joueur a trouver.
+	 * @return joueur trouver ou null si aucune occurance
+	 */
 	public Joueur find(String id)
 	{
 		for(Joueur j : ListJoueur)
@@ -46,6 +70,10 @@ public class JoueurManager {
 		return null;
 	}
 	
+	/**
+	 * construit une string avec tout les joueurs dans la structure de donnee de JoueurManager
+	 * @return String avec tout les joueurs
+	 */
 	public String afficherTout()
 	{
 		String total = "";
@@ -56,6 +84,11 @@ public class JoueurManager {
 		return total;
 	}
 	
+	/**
+	 * construit une string avec l'inforamtion sur un joueur en particulier
+	 * @param id du joueur dont le quel on droit trouver l'information
+	 * @return string avec l'information du joueur en question
+	 */
 	public String afficherJoueur(String id)
 	{
 		Joueur j = find(id);
@@ -65,6 +98,11 @@ public class JoueurManager {
 			return null;
 	}
 	
+	/**
+	 * construit une string pour affichier l'information sur tout les joueurs de la structure de donnee de joueur Manager
+	 * specialiser pour le fichier texte
+	 * @return String avec toute les informations des joueurs. 
+	 */
 	public String afficherInfoFichierTexte(){
 		String fichierComplet = "";
 		for (Joueur j: ListJoueur) {
