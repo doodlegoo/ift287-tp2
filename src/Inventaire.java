@@ -76,9 +76,12 @@ public class Inventaire{
 	 */
 	private static void effaceJoueur(){
 		String id = Interaction.IOCleIdentification();
-		System.out.println(jm.afficherJoueur(id));
-		jm.retirerJoueur(jm.find(id));
-		
+		if(jm.find(id)!= null){
+			System.out.println(jm.afficherJoueur(id));
+			jm.retirerJoueur(jm.find(id));
+		}else{
+			effaceJoueur();
+		}
 	}
 	
 	/**
