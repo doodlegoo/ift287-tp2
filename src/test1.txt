@@ -1,3 +1,5 @@
-"rodriquez1";"Alex Rodriguez";"2";"Rockie years";"Seattle, Mariners";"1994";"The magic years";"New York, Yankees";"2006";
-"jeter1";"Derek Jeter";"1";"The capitan";"New York, Yankees";"2006";
-"clemens1";"Roger Clemens";"2";"Rockie years";"Boston, Red Sox";"1984";"The Cy Young";"New York, Yankees";"2001";
+"rodriquez1";"Alex Rodriguez";"2";"Rockie years";"Seattle, Mariners";"1994";"The magic years";"New York, Yankees";"2006"
+"jeter1";"Derek Jeter";"1";"The capitan";"New York, Yankees";"2006"
+"clemens1";"Roger Clemens";"2";"Rockie years";"Boston, Red Sox";"1984";"The Cy Young";"New York, Yankees";"2001"
+"lavoie1";"Mathieu Lavoie";"1";"Superstar";"A's d'Oakland";"2014"
+"provencher1";"Alex Provencher";"3";"Nachos contre-attaque";"Utah, Nachos";"2010";"Longest HR ever";"Florida, Marlins";"2011";"Pizza time";"Los Angeles, Dodgers";"2012"
