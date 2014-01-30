@@ -49,7 +49,7 @@ public class Carte{
 	}
 	
 	/**
-	 * La méthode afficher permet d'afficher les informations sur une carte comme dans un rapport
+	 * La methode afficher permet d'afficher les informations sur une carte comme dans un rapport
 	 * @return Les donnees de la carte
 	 */
 	public String afficher() {
@@ -60,7 +60,7 @@ public class Carte{
 	}
 	
 	/**
-	 * La méthode afficherFichierTexte permet d'obtenir les informations sur la carte sous le format CSV
+	 * La methode afficherFichierTexte permet d'obtenir les informations sur la carte sous le format CSV
 	 * @return Les donnees d'une carte sous le format CSV
 	 */
 	public String afficherFichierTexte(){
