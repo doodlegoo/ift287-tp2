@@ -8,6 +8,10 @@ public class Inventaire{
 	
 	private static JoueurManager jm = new JoueurManager();
 	
+	/**
+	 * affiche le menu console
+	 * @throws IOException si il y a une erreure en lecture de la ligne
+	 */
 	public static void afficherMenu() throws IOException{
 		Interaction.IOmenu();
 		
@@ -33,7 +37,9 @@ public class Inventaire{
 		afficherMenu();
 	}
 	
-	
+	/**
+	 * menu pour interagir au moment de faire la mise a jours des cartes
+	 */
 	private static void miseAJour(){
 		String s = Interaction.IOCleIdentification();
 		String info = jm.afficherJoueur(s);
@@ -47,10 +53,16 @@ public class Inventaire{
 		jm.modifierJoueur(s);
 	}
 	
+	/**
+	 * ajoute un joueur au joueur au programe.
+	 */
 	private static void ajouterJoueur(){
 		jm.ajouterJoueur(Interaction.IOCleIdentification());
 	}
 	
+	/**
+	 * affiche les inforamtions sur un joueur
+	 */
 	private static void afficherJoueur() {
 		String info = jm.afficherJoueur(Interaction.IOCleIdentification());
 		if(info == null)
@@ -59,6 +71,9 @@ public class Inventaire{
 			System.out.println(info);
 	}
 	
+	/**
+	 * efface un joueur du programe
+	 */
 	private static void effaceJoueur(){
 		String id = Interaction.IOCleIdentification();
 		System.out.println(jm.afficherJoueur(id));
@@ -66,17 +81,27 @@ public class Inventaire{
 		
 	}
 	
+	/**
+	 * lit un fichier et remplie le joueur manager. 
+	 */
 	private static void lireFichier(){
 		List<String[]> listeJoueurs = Interaction.IOInitialisation();
 		for (String[] contenu : listeJoueurs) {
 			jm.ajouterJoueur(contenu);
 		}
 	}
-
+	
+	/**
+	 * imprime les informations dans un fichier
+	 * @throws IOException
+	 */
 	private static void sauvegarderFichier() throws IOException{
 		Interaction.IOSauvegarder(jm.afficherInfoFichierTexte());
 	}
 	
+	/**
+	 * ecrit le rapport a la fenetre ou au fichier
+	 */
 	private static void rapport(){
 		String reponse = Interaction.IOtypeRapport();
 		String contenuRapport = jm.afficherTout();
@@ -91,7 +116,8 @@ public class Inventaire{
 	}
 	
 	/**
-	 * @param args
+	 * fonction main commance le programe
+	 * @param args pour lancer le programe, on ne s'en sert pas.
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
