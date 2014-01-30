@@ -11,11 +11,21 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * La classe Interaction permet de gerer les entrees/sorties et les messages. 
+ * 
+ * @author Mathieu Lavoie, Alex Provencher et Vincent Gagnon
+ *
+ */
 public class Interaction {
 	
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	private static Writer writer;
+	
+	/**
+	 * La méthode IOMenu permet d'afficher le choix selectionne de l'utilisateur
+	 * @param option Le numero du choix dans le menu principal
+	 */
 	public static void IOmenu(int option)
 	{
 		System.out.print("Option selectionne: " + option + ". ");
@@ -41,6 +51,11 @@ public class Interaction {
 		}
 	}
 	
+	/**
+	 * La methode IOCarte te permet de donner les informations sur les cartes (titre, equipe, annee)
+	 * @param nb La xeme carte
+	 * @return Un objet Carte
+	 */
 	public static Carte IOcarte(int nb)
 	{
 		String titre = null;
@@ -76,6 +91,9 @@ public class Interaction {
 		
 		
 	}
+	/**
+	 * La methode IOMenu permet d'afficher le menu.
+	 */
 	public static void IOmenu()
 	{
 		System.out.println("Application de gestion de cartes de baseball");
@@ -90,6 +108,11 @@ public class Interaction {
 		
 		System.out.print("Votre selection : ");
 	}
+	
+	/**
+	 * La methode IOJoueurNom 
+	 * @return
+	 */
 	public static String IOJoueurNom()
 	{
 		String s=null;
@@ -135,6 +158,10 @@ public class Interaction {
 		}
 	    writer.close();
 	}
+	/**
+	 * 
+	 * @param fileContent
+	 */
 	public static void IOSauvegarderRapport(String fileContent){
 		System.out.println("Entrez le nom du fichier : ");
 		String path = "";
@@ -207,7 +234,7 @@ public class Interaction {
 	public static boolean confirmationDelete(){
 		System.out.println("Voulez vous effacer l'information de ce joueur ? (O/N)");
 		try {
-			if( br.readLine().equals("O")){
+			if( br.readLine().toUpperCase().equals("O")){
 				return true;
 			}		
 		} catch (IOException e) {

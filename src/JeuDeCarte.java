@@ -52,12 +52,16 @@ public class JeuDeCarte {
 	 * permet de suprimer les carte demande une confirmation 
 	 * @param nom du joueur ou un suprime ces cartes
 	 */
-	public void deleteCarte(String nom)
+	public boolean deleteCarte(String nom)
 	{
 		afficherTout();
 		if(Interaction.confirmationDelete()){
 			listCartes.clear();
 			Interaction.deleteConfirme(nom);
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 	
