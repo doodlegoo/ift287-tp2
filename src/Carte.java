@@ -13,8 +13,8 @@ public class Carte{
 	/**
 	 * Le constructeur Carte permet de donner les informations sur une carte
 	 * @param titre Le titre de la carte
-	 * @param equipe Le nom de l'équipe du joueur de la carte
-	 * @param annee L'année de parution
+	 * @param equipe Le nom de l'equipe du joueur de la carte
+	 * @param annee L'annee de parution
 	 */
 	
 	public Carte(String titre, String equipe, int annee)
@@ -49,8 +49,8 @@ public class Carte{
 	}
 	
 	/**
-	 * La méthode afficher permet d'afficher les informations sur une carte comme dans un rapport
-	 * @return Les données de la carte
+	 * La methode afficher permet d'afficher les informations sur une carte comme dans un rapport
+	 * @return Les donnees de la carte
 	 */
 	public String afficher() {
 		String s = "\t Titre : " + titre + "\n";
@@ -60,8 +60,8 @@ public class Carte{
 	}
 	
 	/**
-	 * La méthode afficherFichierTexte permet d'obtenir les informations sur la carte sous le format CSV
-	 * @return Les données d'une carte sous le format CSV
+	 * La methode afficherFichierTexte permet d'obtenir les informations sur la carte sous le format CSV
+	 * @return Les donnees d'une carte sous le format CSV
 	 */
 	public String afficherFichierTexte(){
 		String s = ";\"" + titre + "\";\"" + equipe + "\";\"" + annee + "\"";
