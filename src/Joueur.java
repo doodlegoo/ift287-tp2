@@ -41,7 +41,10 @@ public class Joueur implements Comparable<Joueur>{
 		this.prenom = prenom;
 	}
 
-	
+	/**
+	 * initialize les valeur pour le joueur 
+	 * @param id du joueur a cree.
+	 */
 	public Joueur(String id)
 	{
 		jeuDeCarte = new JeuDeCarte();
@@ -59,6 +62,10 @@ public class Joueur implements Comparable<Joueur>{
 		}
 	}
 	
+	/**
+	 * initlaize les valeur pour le joueur (appeller par le fichier texte) 
+	 * @param data pour initializer le joueur.
+	 */
 	public Joueur(String[] data){
 		jeuDeCarte = new JeuDeCarte();
 		setClefId(data[0]);
@@ -78,11 +85,19 @@ public class Joueur implements Comparable<Joueur>{
 		return n.clefId.compareTo(this.clefId) ;
 	}
 	
+	/**
+	 * construit une string avec toute les informations sur le joueur 
+	 * @return string constuite. 
+	 */
 	public String afficherJoueur() {
 		String s = "Voici l'information sauvegarde de: "+ getPrenom()+" " +getNom() + "\n" ;
 		s +=  jeuDeCarte.afficherTout();
 		return s;
 	}
+	/**
+	 * construit une string avec toute les informations sur le joueur (specialiser pour aller au fichier texte)
+	 * @return string constuite. 
+	 */
 	public String afficherFichierTexte(){
 		String s = "";
 		s += "\"" + getClefId() + "\";\"" + getPrenom() + " " + getNom() + "\";\"" + getNbCarte() + "\"";
