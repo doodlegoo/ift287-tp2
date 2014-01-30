@@ -38,8 +38,11 @@ public class JoueurManager {
 	 */
 	public boolean retirerJoueur(Joueur j)
 	{
-		j.getJeuDeCarte().deleteCarte(j.getPrenom() + " " + j.getNom());
-		return ListJoueur.remove(j);
+		boolean confirm = j.getJeuDeCarte().deleteCarte(j.getPrenom() + " " + j.getNom());
+		if(confirm)
+			return ListJoueur.remove(j);
+		else
+			return false;
 	}
 	
 	/**
