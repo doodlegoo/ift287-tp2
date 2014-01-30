@@ -41,27 +41,30 @@ public class Interaction {
 		}
 	}
 	
-	public static Carte IOcarte()
+	public static Carte IOcarte(int nb)
 	{
-		String titre = "";
+		String titre = null;
 		int annee = 0;
-		String equipe = "";
-		
-		System.out.print("Entrez le titre de la carte : ");
+		String equipe = null;
 		try {
-			titre = br.readLine();
+			while(titre == null || titre.length() > 50){
+				System.out.print("Entrez le titre de la carte " + nb + " : ");
+				titre = br.readLine();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		System.out.print("Entrez l'equipe de la carte : ");
 		try {
-			equipe = br.readLine();
+			while(equipe == null || equipe.length() > 30){
+				System.out.print("Entrez l'equipe de la carte " + nb + " : ");
+				equipe = br.readLine();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	
-		System.out.print("Entrez l'annee de parution de la carte : ");
+		System.out.print("Entrez l'annee de parution de la carte " + nb + " : ");
 		try {
 			annee = Integer.parseInt(br.readLine());
 			
@@ -89,10 +92,12 @@ public class Interaction {
 	}
 	public static String IOJoueurNom()
 	{
-		System.out.print("Entrez le nom et prenom du joueur : ");
-		String s="";
+		String s=null;
 		try {
-			s = br.readLine();
+			while(s == null || s.length() > 128){
+				System.out.print("Entrez le nom et prenom du joueur : ");
+				s = br.readLine();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -109,6 +114,8 @@ public class Interaction {
 			i = Integer.parseInt(s);
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (NumberFormatException e){
+			i = IOnbCartes();
 		}
 		return i;
 	}
@@ -136,17 +143,6 @@ public class Interaction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		File file = new File(path);
-		if(file.exists()){
-			file.delete();
-		}
-		else{
-			try {
-				file.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 		try {
 			writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path)));
 			writer.write(fileContent);
@@ -158,23 +154,13 @@ public class Interaction {
 		}
 		
 	}
-	public static String IOAjoutJoueur(){
-		System.out.print("Entrez la cle d'identification du joueur: ");
-		String s="";
+	public static String IOCleIdentification(){
+		String s=null;
 		try {
-			s = br.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return s;
-	}
-	
-	public static String IOAfficherJoueur(){
-		System.out.println();
-		System.out.print("Entrez la cle d'identification du joueur: ");
-		String s="";
-		try {
-			s = br.readLine();
+			while(s == null || s.length() > 16){
+				System.out.print("Entrez la cle d'identification du joueur: ");
+				s = br.readLine();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -235,6 +221,10 @@ public class Interaction {
 	}
 	public static void merci(){
 		System.out.println("Merci d'avoir utilise le systeme de gestion d'inventaire de cartes."); 
+	}
+	
+	public static void cleIdentification(){
+		System.out.println("La cle d'identification du joueur n'existe pas.");
 	}
 
 	public static void modifierJoueur() {

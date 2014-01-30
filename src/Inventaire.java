@@ -35,25 +35,34 @@ public class Inventaire{
 	
 	
 	private static void miseAJour(){
-		String s = Interaction.IOAfficherJoueur();
-		System.out.println(jm.afficherJoueur(s));
+		String s = Interaction.IOCleIdentification();
+		String info = jm.afficherJoueur(s);
+		if(info == null){
+			Interaction.cleIdentification();
+			return;
+		}
+		else
+			System.out.println(info);
 		Interaction.modifierJoueur();
 		jm.modifierJoueur(s);
 	}
 	
 	private static void ajouterJoueur(){
-		jm.ajouterJoueur(Interaction.IOAjoutJoueur());
+		jm.ajouterJoueur(Interaction.IOCleIdentification());
 	}
 	
 	private static void afficherJoueur() {
-		System.out.println(jm.afficherJoueur(Interaction.IOAfficherJoueur()));
+		String info = jm.afficherJoueur(Interaction.IOCleIdentification());
+		if(info == null)
+			Interaction.cleIdentification();
+		else
+			System.out.println(info);
 	}
 	
 	private static void effaceJoueur(){
-		String id = Interaction.IOAfficherJoueur();
+		String id = Interaction.IOCleIdentification();
 		System.out.println(jm.afficherJoueur(id));
-		if(Interaction.confirmationDelete())
-			jm.retirerJoueur(jm.find(id));
+		jm.retirerJoueur(jm.find(id));
 		
 	}
 	

@@ -1,44 +1,21 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
-
-public class Carte implements Comparable<Carte>{
+/**
+ * La classe Carte 
+ * 
+ * @author Mathieu Lavoie, Vincent Gagnon et Alex Provencher
+ *
+ */
+public class Carte{
 
 	private String titre, equipe;
 	private int annee;
 	
-	
-	//une solution mais je preferais avoir tout se qui est IO dans une methode autre que le constructeur 
-	//surtout quand va venir le temps d'interagir ac une BD
-	public Carte(int id){
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Entrez le titre de la carte: ");
-		String s="";
-		try {
-			s = br.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		setTitre(s);
-		System.out.print("Entrez l'equipe de la carte: ");
-		s="";
-		try {
-			s = br.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		setEquipe(s);
-		System.out.print("Entrez l'annee de parution de la carte: ");
-		s="";
-		try {
-			s = br.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		setEquipe(s);
-	}
+	/**
+	 * Le constructeur Carte permet de donner les informations sur une carte
+	 * @param titre Le titre de la carte
+	 * @param equipe Le nom de l'équipe du joueur de la carte
+	 * @param annee L'année de parution
+	 */
 	
 	public Carte(String titre, String equipe, int annee)
 	{
@@ -70,12 +47,11 @@ public class Carte implements Comparable<Carte>{
 	public void setAnnee(int annee) {
 		this.annee = annee;
 	}
-
-	//doit retourner un int negatif ou positif selon si this est plus grand
-	@Override
-	public int compareTo(Carte n) {
-		return 1;
-	}
+	
+	/**
+	 * La méthode afficher permet d'afficher les informations sur une carte comme dans un rapport
+	 * @return Les données de la carte
+	 */
 	public String afficher() {
 		String s = "\t Titre : " + titre + "\n";
 		s += "\t Equipe : " + equipe + "\n";
@@ -83,6 +59,10 @@ public class Carte implements Comparable<Carte>{
 		return s;
 	}
 	
+	/**
+	 * La méthode afficherFichierTexte permet d'obtenir les informations sur la carte sous le format CSV
+	 * @return Les données d'une carte sous le format CSV
+	 */
 	public String afficherFichierTexte(){
 		String s = ";\"" + titre + "\";\"" + equipe + "\";\"" + annee + "\"";
 		return s;

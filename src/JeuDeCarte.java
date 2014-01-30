@@ -12,13 +12,14 @@ public class JeuDeCarte {
 		listCartes = new ArrayList<Carte>();
 	}
 	
-	public void ajouter(int i)
+	public void ajouter(int k)
 	{
-		// Demande les infos de la carte
-		Carte c = Interaction.IOcarte();
-		listCartes.add(c);
-		
-		nbCartes++;
+		if(nbCartes + 1 > 21){
+			Carte c = Interaction.IOcarte(k);
+			listCartes.add(c);
+			
+			nbCartes++;
+		}
 	}
 	public void ajouter(String titre, String equipe, int annee){
 		Carte c = new Carte(titre, equipe, annee);

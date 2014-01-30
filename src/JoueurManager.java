@@ -58,7 +58,11 @@ public class JoueurManager {
 	
 	public String afficherJoueur(String id)
 	{
-		return find(id).afficherJoueur();
+		Joueur j = find(id);
+		if(j != null)
+			return j.afficherJoueur();
+		else
+			return null;
 	}
 	
 	public String afficherInfoFichierTexte(){
